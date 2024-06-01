@@ -11,6 +11,6 @@ class Subscription extends Model
 
 
     protected $fillable = [
-        'stripe_id', 'customer_email', 'plan', 'ends_at'
+        'stripe_id', 'customer_email', 'plan', 'planName', 'ends_at'
     ];
 }
