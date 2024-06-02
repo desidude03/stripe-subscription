@@ -22,5 +22,8 @@ Route::get('/', [SubscriptionController::class, 'checkout'])->name('checkout');
 Route::post('/subscribe', [SubscriptionController::class, 'subscribe'])->name('subscribe');
 
 
-Route::post('webhook', [WebhookController::class, 'handleWebhook']);
+// Route::post('webhook', [WebhookController::class, 'handleWebhook']);
+
+Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
+
 

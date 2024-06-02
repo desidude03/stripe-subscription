@@ -15,50 +15,8 @@ class SubscriptionController extends Controller
         return view('checkout');
     }
 
-    // public function subscribe(Request $request)
-    // {
-    //     return $request;
-    //     Stripe::setApiKey(config('services.stripe.secret'));
-
-    //     try {
-    //         $customer = Customer::create([
-    //             'email' => $request->email,
-    //             'source' => $request->stripeToken,
-    //         ]);
-
-    //     //     $plans = \Stripe\Plan::all(['limit' => 10]); 
-    //     //     return $plans;
-
-    //         $subscription = Subscription::create([
-    //             'customer' => $customer->id,
-    //             'items' => [['plan' => $request->plan]],
-    //         ]);
-
-    //         // $plansDetails = $subscription;
-    //         // return $plansDetails->plan->interval;
-
-    //         $endsAt = $subscription->plan->interval === 'month' ? now()->addMonth() : now()->addYear();
-    //         $planName = $subscription->plan->interval === 'month' ? 'Pro_monthly_49' : 'Pro_annual_249';
-
-    //        $res = LocalSubscription::create([
-    //             'stripe_id' => $subscription->id,
-    //             'customer_email' => $request->email,
-    //             'plan' => $request->plan,
-    //             'planName' => $planName,
-    //             'ends_at' => $endsAt,
-    //             'updated_at' => now(),
-    //             'created_at' => now(),
-    //         ]);
-    //        return $res;
-
-    //         return redirect()->back()->with('success', 'Subscription successful!');
-    //     } catch (\Exception $e) {
-    //         return redirect()->back()->with('error', 'Subscription failed: ' . $e->getMessage());
-    //     }
-    // }
-
     public function subscribe(Request $request)
-{
+   {
     Stripe::setApiKey(config('services.stripe.secret'));
 
     try {
@@ -80,6 +38,8 @@ class SubscriptionController extends Controller
             'customer' => $customer->id,
             'items' => [['plan' => $request->plan]],
         ]);
+
+        // return $subscription;
 
         // Determine the subscription end date and plan name
         $endsAt = $subscription->plan->interval === 'month' ? now()->addMonth() : now()->addYear();

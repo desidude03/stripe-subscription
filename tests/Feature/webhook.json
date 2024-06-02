@@ -1,0 +1,41 @@
+{
+    "id": "evt_test_webhook",
+    "object": "event",
+    "api_version": "2020-08-27",
+    "created": 1615467323,
+    "data": {
+      "object": {
+        "id": "sub_test",
+        "object": "subscription",
+        "customer": "cus_test",
+        "items": {
+          "data": [
+            {
+              "id": "si_test",
+              "object": "subscription_item",
+              "plan": {
+                "id": "price_1PMpQiIjvJe8MwyWXTCe1M4s",
+                "object": "plan",
+                "amount": 4900,
+                "interval": "month",
+                "interval_count": 1,
+                "currency": "usd",
+                "product": "prod_test"
+              }
+            }
+          ]
+        },
+        "status": "active",
+        "current_period_end": 1618069323,
+        "current_period_start": 1615467323
+      }
+    },
+    "livemode": false,
+    "pending_webhooks": 1,
+    "request": {
+      "id": "req_test",
+      "idempotency_key": null
+    },
+    "type": "customer.subscription.created"
+  }
+  
