@@ -38,4 +38,5 @@ Start the local development server
 You can now access the server at http://localhost:8000
 
 Run Test cases
+
     php artisan test
